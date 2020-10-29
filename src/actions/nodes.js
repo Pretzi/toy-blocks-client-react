@@ -33,9 +33,12 @@ export function checkNodeStatus(node) {
         dispatch(checkNodeStatusFailure(node));
       }
 
+      const blocksRes = await fetch(`${node.url}/api/v1/blocks`);
+      const blocksJson = await blocksRes.json();
+
       const json = await res.json();
 
-      dispatch(checkNodeStatusSuccess(node, json));
+      dispatch(checkNodeStatusSuccess(node, {...json, blocks: blocksJson}));
     } catch (err) {
       dispatch(checkNodeStatusFailure(node));
     }
