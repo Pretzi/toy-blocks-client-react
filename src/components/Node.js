@@ -11,9 +11,40 @@ import {
 } from "@material-ui/core";
 import colors from "../constants/colors";
 import Status from "./Status";
+import "./styles.css"
 
 const Node = ({ node, expanded, toggleNodeExpanded }) => {
   const classes = useStyles();
+
+  const renderBlocks = () => {
+    const blocks = node.blocks.data.map((item, i) => {
+      const { 
+        index,
+        hash
+      } = item.attributes;
+      
+      return (
+        <div className="toy-blocks-blocks-box" key={i}>
+          <div className="toy-blocks-blocks-index">{index}</div>
+          <div className="toy-blocks-blocks-hash">{hash}</div>
+        </div>
+      )
+    });
+
+    return blocks;
+  }
+  const renderStatus = () => {
+    if (node.online && node.blocks) {
+      return renderBlocks();
+    }
+
+    if (!node.online) {
+      return "Data is not available"
+    }
+
+    return "Loading Blocks..."
+  }
+
   return (
     <ExpansionPanel
       elevation={3}
@@ -46,7 +77,9 @@ const Node = ({ node, expanded, toggleNodeExpanded }) => {
         </Box>
       </ExpansionPanelSummary>
       <ExpansionPanelDetails>
-        <Typography>Blocks go here</Typography>
+        <div className="toy-blocks-blocks-container">
+          {renderStatus()}
+        </div>
       </ExpansionPanelDetails>
     </ExpansionPanel>
   );
