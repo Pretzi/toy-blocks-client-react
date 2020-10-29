@@ -31,6 +31,7 @@ export default function nodesReducer(state = initialState().nodes, action) {
             ...state.list[nodeIndex],
             online: true,
             name: action.res.node_name,
+            blocks: action.res.blocks,
             loading: false
           },
           ...state.list.slice(nodeIndex + 1)
