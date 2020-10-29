@@ -1,0 +1,28 @@
+.toy-blocks-blocks-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+}
+
+.toy-blocks-blocks-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #E0E0E0;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  padding-right: 3px;
+  padding-left: 3px;
+  padding-bottom: 3px;
+}
+
+.toy-blocks-blocks-index {
+  font-size: 14px;
+  color: #5870F7;
+}
+
+.toy-blocks-blocks-hash {
+  font-size: 14px;
+  color: black;
+}
