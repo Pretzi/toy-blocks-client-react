@@ -132,11 +132,11 @@ exports[`<Nodes /> should match snapshot 1`] = `
             <div
               className="MuiExpansionPanelDetails-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1"
+              <div
+                className="toy-blocks-blocks-container"
               >
-                Blocks go here
-              </p>
+                Data is not available
+              </div>
             </div>
           </div>
         </div>
@@ -258,11 +258,11 @@ exports[`<Nodes /> should match snapshot 1`] = `
             <div
               className="MuiExpansionPanelDetails-root"
             >
-              <p
-                className="MuiTypography-root MuiTypography-body1"
+              <div
+                className="toy-blocks-blocks-container"
               >
-                Blocks go here
-              </p>
+                Data is not available
+              </div>
             </div>
           </div>
         </div>
